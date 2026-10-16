@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071326">
+  <title>Join Our Community</title>
+  <style>
+    :root{color-scheme:dark;--bg:#061225;--panel:#0b1729;--line:#243954;--muted:#a9bbd6;--blue:#315fff;--purple:#a855f7;--gold:#f3b43b}
+    *{box-sizing:border-box} body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;color:#f5f8ff;background:radial-gradient(ellipse at 15% 15%,#102c4a 0,transparent 38%),radial-gradient(ellipse at 85% 70%,#102b3b 0,transparent 34%),var(--bg);overflow-x:hidden}
+    .pond{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:-1}.lily{position:absolute;width:110px;height:38px;background:#0d5748;border-radius:100% 0 100% 0;opacity:.38;animation:drift 16s ease-in-out infinite alternate}.l1{left:7%;top:73%}.l2{left:78%;top:21%;animation-delay:-5s}.l3{left:62%;top:84%;animation-delay:-9s}.star{position:absolute;width:3px;height:3px;background:#d6e9ff;border-radius:50%;box-shadow:0 0 10px #8dcaff;animation:twinkle 3s infinite alternate}
+    @keyframes drift{to{transform:translate(40px,-16px) rotate(18deg)}}@keyframes twinkle{to{opacity:.25;transform:scale(.6)}}@keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-15px) rotate(4deg)}}@keyframes ring{to{transform:scale(1.18);opacity:.2}}
+    .duck{position:fixed;left:clamp(8px,5vw,70px);top:45px;font-size:62px;filter:drop-shadow(0 8px 16px #0008);animation:bob 3.2s ease-in-out infinite;z-index:1;pointer-events:none}.helper{position:fixed;right:clamp(10px,5vw,60px);top:30px;display:flex;align-items:center;gap:10px;z-index:4}.fox{height:64px;width:64px;border-radius:50%;display:grid;place-items:center;font-size:36px;background:linear-gradient(145deg,#6d55ff,#182c61);border:3px solid #8db5ff;box-shadow:0 0 24px #4c79ff88}.helpbtn{border:1px solid #4269d8;border-radius:24px;background:#132b54;color:white;padding:11px 15px;font-weight:700;cursor:pointer}
+    main{width:min(560px,calc(100% - 28px));margin:135px auto 48px}.card{background:linear-gradient(145deg,#0b1729f5,#071221f5);border:1px solid var(--line);border-radius:24px;padding:clamp(22px,5vw,34px);box-shadow:0 24px 70px #0005}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:11px;font-weight:800;color:#9ab9ff;text-align:center}.title{text-align:center;font-size:clamp(27px,5vw,36px);margin:10px 0}.sub{text-align:center;color:var(--muted);line-height:1.6;margin:0 0 26px}.fieldlabel{display:block;font-size:14px;font-weight:750;margin:20px 0 10px}.tiers{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tier{border:2px solid #30425e;border-radius:16px;padding:20px 12px;text-align:center;cursor:pointer;background:#0c1a2e;color:white;transition:.2s}.tier .symbol{font-size:28px;display:block;margin-bottom:8px}.tier strong,.tier small{display:block}.tier small{color:#c3d0e5;margin-top:5px}.tier.selected[data-tier="mod"]{border-color:var(--purple);background:#512c773b;box-shadow:0 0 20px #a855f72b}.tier.selected[data-tier="admin"]{border-color:var(--gold);background:#8d5a1e30;box-shadow:0 0 20px #f3b43b22}input{width:100%;padding:15px 16px;border:1px solid #385174;border-radius:13px;background:#0c1a2d;color:white;font:inherit;outline:none}input:focus{border-color:#7298ff;box-shadow:0 0 0 3px #4168ff2b}.ages{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.age{border:1px solid #344b6d;border-radius:13px;padding:13px 5px;text-align:center;background:#0b192b;cursor:pointer;color:#eaf1ff}.age strong,.age small{display:block}.age small{font-size:11px;color:#a9bbd6;margin-top:4px}.age.selected{border-color:#648aff;background:#243c78}.primary{width:100%;border:0;border-radius:14px;background:linear-gradient(100deg,#4e5dff,#2364ff);padding:16px;color:white;font:inherit;font-weight:800;margin-top:24px;cursor:pointer}.primary:disabled{opacity:.6;cursor:wait}.note{text-align:center;color:#8196b5;font-size:12px;line-height:1.5;margin:18px 0 0}.error{color:#ff9eaa;margin-top:12px;font-size:14px}.hidden{display:none!important}.success{text-align:center;padding:35px 8px}.check{font-size:55px;color:#56ed83}.success h2{font-size:30px}.success p{color:#c3d0e5;line-height:1.65}.chatbox{position:fixed;right:18px;top:108px;width:min(320px,calc(100vw - 36px));padding:18px;background:#0c1b30;border:1px solid #3b5a88;border-radius:18px;box-shadow:0 20px 50px #0008;z-index:5}.chatbox p{color:#cfdbed;font-size:14px;line-height:1.5}.chatbox button{background:#182d4c;border:1px solid #3b5a88;color:white;border-radius:10px;padding:9px;cursor:pointer}.chat-options{display:flex;flex-wrap:wrap;gap:7px}.footer{text-align:center;color:#7288a8;font-size:12px;margin-top:18px}
+    @media(max-width:420px){.duck{top:20px;font-size:48px}.helper{top:17px}.fox{width:52px;height:52px;font-size:29px}.helpbtn{padding:9px 10px;font-size:12px}main{margin-top:105px}.card{padding:21px}.tier{padding:16px 7px}.ages{gap:6px}.age{font-size:13px}}
+  </style>
+</head>
+<body>
+  <div class="pond" aria-hidden="true">
+    <span class="lily l1"></span><span class="lily l2"></span><span class="lily l3"></span>
+    <span class="star" style="left:18%;top:18%"></span><span class="star" style="left:73%;top:39%;animation-delay:1s"></span><span class="star" style="left:87%;top:76%;animation-delay:2s"></span><span class="star" style="left:34%;top:84%;animation-delay:.7s"></span>
+  </div>
+  <div class="duck" aria-label="Floating duck mascot">🦆</div>
+  <div class="helper"><div class="fox" aria-label="Fox helper avatar">🦊</div><button class="helpbtn" id="helpToggle">Need help?</button></div>
+  <aside class="chatbox hidden" id="helperPanel">
+    <strong>🦊 Fox Helper</strong>
+    <p id="helperText">Hi! What would you like help with?</p>
+    <div class="chat-options">
+      <button data-help="Tier 1 is for Mod applications.">What is Tier 1?</button>
+      <button data-help="Tier 2 is for Admin applications. Choose it only if that role is intended for you.">What is Tier 2?</button>
+      <button data-help="Choose your age range, enter your username, then submit. No email is requested.">How do I apply?</button>
+    </div>
+  </aside>
+  <main>
+    <section class="card" id="formCard">
+      <div class="eyebrow">Community applications</div>
+      <h1 class="title">Join Our Community</h1>
+      <p class="sub">Choose your tier and fill out the quick form to get started.</p>
+      <form id="signupForm">
+        <span class="fieldlabel">Choose your tier</span>
+        <div class="tiers" role="group" aria-label="Application tier">
+          <button class="tier" type="button" data-tier="mod" aria-pressed="false"><span class="symbol">🛡️</span><strong>Tier 1</strong><small>Mod</small></button>
+          <button class="tier" type="button" data-tier="admin" aria-pressed="false"><span class="symbol">👑</span><strong>Tier 2</strong><small>Admin</small></button>
+        </div>
+        <aside class="tier-note"><strong>New here?</strong> Sign up for <strong>Tier 1 (Mod)</strong> first. You can apply for <strong>Tier 2 (Admin)</strong> afterward.</aside>
+        <label class="fieldlabel" for="username">Yapper username</label>
+        <input id="username" name="username" autocomplete="nickname" maxlength="40" placeholder="Your username" required>
+        <span class="fieldlabel">How old are you?</span>
+        <div class="ages" role="group" aria-label="Age range">
+          <button class="age" type="button" data-age="under-13" aria-pressed="false"><strong>-13</strong><small>Under 13</small></button>
+          <button class="age" type="button" data-age="13-17" aria-pressed="false"><strong>13–17</strong><small>Ages 13–17</small></button>
+          <button class="age" type="button" data-age="18+" aria-pressed="false"><strong>+18</strong><small>18 and older</small></button>
+        </div>
+        <button class="primary" id="submitBtn" type="submit">Submit application →</button>
+        <div class="error" id="error" role="alert"></div>
+        <p class="note">Only your username, selected tier, and age range are requested. Please don't enter passwords or private contact details.</p>
+      </form>
+    </section>
+    <section class="card hidden success" id="successCard" aria-live="polite">
+      <div class="check">✓</div><h2>Thank You!</h2>
+      <p>Please DM one of the founders so they can read your form.</p>
+      <p>We appreciate you applying to our community. 🦆</p>
+    </section>
+    <div class="footer">Made for the community · Be kind and stay safe</div>
+  </main>
+<script>
+  let selectedTier = "", selectedAge = "";
+  document.querySelectorAll("[data-tier]").forEach(btn => btn.addEventListener("click", () => {
+    selectedTier = btn.dataset.tier;
+    document.querySelectorAll("[data-tier]").forEach(b => {b.classList.toggle("selected", b===btn); b.setAttribute("aria-pressed", String(b===btn));});
+  }));
+  document.querySelectorAll("[data-age]").forEach(btn => btn.addEventListener("click", () => {
+    selectedAge = btn.dataset.age;
+    document.querySelectorAll("[data-age]").forEach(b => {b.classList.toggle("selected", b===btn); b.setAttribute("aria-pressed", String(b===btn));});
+  }));
+  const panel = document.getElementById("helperPanel");
+  document.getElementById("helpToggle").addEventListener("click", () => panel.classList.toggle("hidden"));
+  document.querySelectorAll("[data-help]").forEach(b => b.addEventListener("click", () => document.getElementById("helperText").textContent = b.dataset.help));
+  document.getElementById("signupForm").addEventListener("submit", async event => {
+    event.preventDefault();
+    const error = document.getElementById("error");
+    const button = document.getElementById("submitBtn");
+    error.textContent = "";
+    const username = document.getElementById("username").value.trim();
+    if (!selectedTier || !selectedAge) { error.textContent = "Please choose a tier and an age range."; return; }
+    if (!/^[\w .-]{2,40}$/u.test(username)) { error.textContent = "Use 2–40 characters: letters, numbers, spaces, dots, underscores, or hyphens."; return; }
+    button.disabled = true; button.textContent = "Submitting…";
+    try {
+      const response = await fetch("/api/submit", {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({tier:selectedTier,username,ageRange:selectedAge})});
+      if (!response.ok) { const data = await response.json().catch(()=>({})); throw new Error(data.error || "Submission failed. Please try again later."); }
+      document.getElementById("formCard").classList.add("hidden");
+      document.getElementById("successCard").classList.remove("hidden");
+    } catch (e) { error.textContent = e.message || "Could not submit. Please try again."; }
+    finally { button.disabled = false; button.textContent = "Submit application →"; }
+  });
+</script>
+</body>
+</html>
